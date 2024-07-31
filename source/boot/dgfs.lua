@@ -24,6 +24,11 @@ else
 function read(sector_id)
     dump = component.drive.readSector(sector_id)
     sector_dump = io.open("/tmp/" .. sector_id, "w")
-    sector_dump.write(dump)
-    sector_dump.close()
+    sector_dump:write(dump)
+    sector_dump:close()
 
+function write(sector_id)
+    sector_dump = io.open("/tmp/" .. sector_id, "r")
+    dump = sector_dump:read("*a")
+    sector_dump:close()
+    component.drive.writeSector(sector_id, dump)
