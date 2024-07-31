@@ -8,7 +8,9 @@
 
 local main = component.proxy(component.list("drive")())
 local boot = component.proxy(component.list("filesystem")())
-
+local sector_id = {}
+local sector_dump = {}
+local dump = {}
 -------------------------------------------------------------------------------
 
 initialized_fat = main.readByte(1)
@@ -19,3 +21,9 @@ else
     main.writeByte(1,1)
 
 :: load_fat ::
+function read(sector_id)
+    dump = component.drive.readSector(sector_id)
+    sector_dump = io.open("/tmp/" .. sector_id, "w")
+    sector_dump.write(dump)
+    sector_dump.close()
+
