@@ -32,3 +32,8 @@ elif choice == 2:
   io.write("Enter sector")
   write_sec = io.read
   dgfs.write(write_sec)
+elif choice == 3:
+  break
+else:
+    io.write("Invalid option")
+    break
