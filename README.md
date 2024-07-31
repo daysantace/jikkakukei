@@ -2,6 +2,8 @@
 
 A more modern OS for OpenComputers.
 
+This branch has my (Everytab's) untested code.
+Still learning lua, so don't expect much
 ## System requirements
 
 * One unmanaged drive
