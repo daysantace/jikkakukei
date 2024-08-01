@@ -16,7 +16,7 @@ end
 loadfile(/dlib/dgfs.lua)
 
 io.write("Sample DFGS Driver Interface")
-io.write("Ensure that intended sector already exists as "/tmp/<sector_number")
+io.write("Ensure that intended sector already exists as /tmp/<sector_number")
 io.write("Choose option")
 io.write("(1) Read Sector, (2) Write Sector, (3) Cancel")
 
