@@ -26,9 +26,11 @@ function read(sector_id)
     sector_dump = io.open("/tmp/" .. sector_id, "w")
     sector_dump:write(dump)
     sector_dump:close()
+end
 
 function write(sector_id)
     sector_dump = io.open("/tmp/" .. sector_id, "r")
     dump = sector_dump:read("*a")
     sector_dump:close()
     component.drive.writeSector(sector_id, dump)
+end
