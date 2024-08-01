@@ -24,16 +24,17 @@ local choice = io.read
 local read_sec = {}
 local write_sec = {}
 
-if choice == 1:
+if choice == 1 then
   io.write("Enter sector")
   read_sec = io.read
   dgfs.read(read_sec)
-elif choice == 2:
+elseif choice == 2 then
   io.write("Enter sector")
   write_sec = io.read
   dgfs.write(write_sec)
-elif choice == 3:
+elseif choice == 3 then
   break
-else:
+else
     io.write("Invalid option")
-    break
+    break 
+end
