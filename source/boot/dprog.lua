@@ -2,7 +2,7 @@
 -- Testing program to interface with the core driver
 
 
-
+local addr, invoke = computer.getBootAddress(), component.invoke
 local function loadfile(file)
     local handle = assert(invoke(addr, "open", file))
     local buffer = ""
